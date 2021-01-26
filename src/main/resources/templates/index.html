@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello chat!!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" th:href="@{style.css}"/>
+    <!--  <link rel="stylesheet" href="../static/style.css" type="text/css">-->
+</head>
+<body onload="connect()">
+
+  <div id="chat-page">
+
+        <div class="form-group" style="margin-top: 0px; padding-top: 0px">
+            <div class="input-group" style="margin-top: 0px; padding-top: 0px">
+                <div class="logout">
+                    <form method="get" th:action="@{/logout}">
+                        <button type="submit" class="accent">Wyloguj</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="heading">
+               <label>Użytkownik:</label>
+            <span id="span" th:text="${name}"/>
+        </div>
+
+        <div class="form-group">
+            <div class="input-group">
+               <form id="messageForm" name="messageForm">
+                 <input type="text" id="messageToSend" placeholder="Twoja wiadomość..." class="form-control"
+                                 onKeyPress="if(event.keyCode == 13) { sendMessage(); return false; }"/>
+               </form>
+
+                <button type="submit" onclick="sendMessage()">Wyślij wiadomość</button>
+            </div>
+        </div>
+
+        <div class="chat-container" id="messageArea">
+            <p id="response" ></p>
+        </div>
+  </div>
+  <script src="main-js.js"></script>
+  <script src="stomp.js"></script>
+</body>
+</html>
