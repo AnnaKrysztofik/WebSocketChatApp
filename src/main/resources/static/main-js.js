@@ -18,8 +18,8 @@ function showMessage(value, user, userColor, date) {
 }
 
 function connect() {
-   client = Stomp.client('ws://localhost:8080/chat');
-  //  client = Stomp.client('ws://websocketchatapplicationania.herokuapp.com:8080/chat');
+   //client = Stomp.client('ws://localhost:8080/chat');
+    client = Stomp.client('ws://websocketchatapplicationania.herokuapp.com:8080/chat');
 
     color = getRandomColor();
     date = getDate();
