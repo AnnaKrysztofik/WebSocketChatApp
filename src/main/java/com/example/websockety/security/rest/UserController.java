@@ -22,14 +22,14 @@ public class UserController {
         this.userService = userService;
     }
  //@CrossOrigin(origins = "http://localhost:8080")
-  @CrossOrigin(origins = "http://websocketchatapplicationania.herokuapp.com")
+  @CrossOrigin(origins = "http://websocketchatapps.herokuapp.com")
     @GetMapping("/login")
     public String getLoginPage() {
         return "login";
     }
 
  // @CrossOrigin(origins = "http://localhost:8080")
- @CrossOrigin(origins = "http://websocketchatapplicationania.herokuapp.com")
+ @CrossOrigin(origins = "http://websocketchatapps.herokuapp.com")
     @GetMapping("/")
     public String chat(Principal principal, Model model) {
         model.addAttribute("name", principal.getName());
@@ -40,7 +40,7 @@ public class UserController {
         return "index";
     }
  //  @CrossOrigin(origins = "http://localhost:8080")
-  @CrossOrigin(origins = "http://websocketchatapplicationania.herokuapp.com")
+  @CrossOrigin(origins = "http://websocketchatapps.herokuapp.com")
     @GetMapping("/sign-up")
     public String singUp(Model model) {
        AppUser newAppUser = new AppUser();
