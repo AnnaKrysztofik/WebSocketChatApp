@@ -20,7 +20,7 @@ function showMessage(value, user, userColor, date) {
 function connect() {
    //client = Stomp.client('ws://localhost:8080/chat');
    //   client = Stomp.client('ws://websocketchatapps.herokuapp.com:8080/chat');
-      client = Stomp.client("'${window.location.protocol === 'http:' ? 'ws' : 'wss'}"+"://"+"${window.location.host}/chat'");
+      client = Stomp.client('${window.location.protocol === 'http:' ? 'ws' : 'wss'}://${window.location.host}/chat');
    // client = Stomp.client('https://websocketchatapps.herokuapp.com/chat');
  //   https://websocketchatapps.herokuapp.com/
 
